@@ -103,7 +103,7 @@ pre_process_did <- function(yname,
 
 
   # Check if there is a never treated group
-  if ( length(glist[glist==0]) == 0) {
+  if (!any(glist == 0)) {
     if(control_group=="nevertreated"){
       stop("There is no available never-treated group")
     } else {
